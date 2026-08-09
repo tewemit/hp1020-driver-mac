@@ -104,6 +104,13 @@ lpstat -p HP_LaserJet_1020
 
 ## Notes
 
+- Sometimes the usb port id may change or get dropped and jobs stop printing. In this case, re-list the usb ports and run below command with the new usb addres
+```bash
+lpadmin -p "HP_LaserJet_1020" -E \
+  -v "usb://Hewlett-Packard/HP%20LaserJet%201020?serial=YOURSERIAL" \
+  -P "/Library/Printers/PPDs/Contents/Resources/HP LaserJet 1022.gz" \
+  -D "HP LaserJet 1020"
+```  
 - The `lpadmin: Printer drivers are deprecated` warning from CUPS is harmless — printing works fine
 - Uses the **LaserJet 1022** PPD, which is tested to be compatible with the 1020 hardware
 - The binaries are universal (x86_64 + arm64) — works on both Intel and Apple Silicon Macs
