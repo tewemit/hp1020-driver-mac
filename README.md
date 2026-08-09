@@ -90,6 +90,9 @@ lpadmin -p "HP_LaserJet_1020" -E \
 # print a file
 lp -d HP_LaserJet_1020 /path/to/file.pdf
 
+# print many files with specific extension
+lp -d HP_LaserJet_1020 *.pdf
+
 # print a specific page
 lp -d HP_LaserJet_1020 -o page-ranges=2 /path/to/file.pdf
 
